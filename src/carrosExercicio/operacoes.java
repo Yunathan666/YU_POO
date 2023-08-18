@@ -13,7 +13,7 @@ public class operacoes {
 		do {
 		int operador = Integer.parseInt(JOptionPane.showInputDialog("OQUE VOCE DESEJA FAZER?\n\n" +
                 "1 - CADASTRAR NOVO CARRO AO ESTOQUE\n" +
-                "2 - LISTAR POR COR\n" +
+                "2 - LISTAR TODOS\n" +
                 "3 - LISTAR POR MARCA\n" +
                 "4 - SAIR"));
 		
@@ -31,6 +31,17 @@ public class operacoes {
 			for (carroCadastro a1 : carros) {
 				result += a1.exibirDados();
 			} JOptionPane.showMessageDialog(null, result);
+		break;	
+			
+		case 3:
+			String marcaParaProcurar = JOptionPane.showInputDialog(a);
+			String marcaProcurar = "Carros da cor " + marcaParaProcurar + "\n\n";
+			for(carroCadastro a2 : carros) {
+				if(a2.cor.equalsIgnoreCase(marcaParaProcurar)) {
+					marcaProcurar += a2.exibirDados();
+				}
+			} JOptionPane.showMessageDialog(null, marcaProcurar);
+			
 		}
 		
 		
